@@ -61,18 +61,16 @@
         headers: {
           'Access-Control-Allow-Origin': '*',
         }
-      })
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (json) {
-          const result = JSON.stringify(json);
-          // we get the value of authUrl
-          const { authUrl } = JSON.parse(result);
-          // then add it to the html
-          resultElement.innerText = result;
-          resultLink.href = authUrl;
-        });
+      }).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        const result = JSON.stringify(json);
+        // we get the value of authUrl
+        const { authUrl } = JSON.parse(result);
+        // then add it to the html
+        resultElement.innerText = result;
+        resultLink.href = authUrl;
+      });
     };
     // --------------------- END OF STEP 1
 

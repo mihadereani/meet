@@ -71,7 +71,7 @@
     const getAccessToken = document.getElementById("getToken");
     const accessTokenElement = document.getElementById("accessToken");
     const getToken =
-      "YOUR_LAMBDA_GET_TOKEN_ENDPOINT";
+      "https://qz44vainpj.execute-api.eu-central-1.amazonaws.com/dev/api/token/{code}";
 
     getAccessToken.onclick = function () {
       let code = codeValue.value;
@@ -81,7 +81,12 @@
         code = encodeURIComponent(codeValue.value);
       }
       const getTokenRequest = getToken + "/" + code;
-      fetch(getTokenRequest)
+      fetch(getTokenRequest, {
+        mode: "no-cors",
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        }
+      })
         .then(function (response) {
           return response.json();
         })

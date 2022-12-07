@@ -33,6 +33,7 @@ module.exports.getAuthURL = async () => {
 
   return {
     statusCode: 200,
+    mode: 'no-cors',
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
@@ -43,11 +44,13 @@ module.exports.getAuthURL = async () => {
 };
 
 module.exports.getAccessToken = async (event) => {
+  // The values used to instantiate the OAuthClient are at the top of the file
   const oAuth2Client = new google.auth.OAuth2(
     client_id,
     client_secret,
     redirect_uris[0]
   );
+  // Decode authorization code extracted from the URL query
   const code = decodeURIComponent(`${event.pathParameters.code}`);
 
   return new Promise((resolve, reject) => {
@@ -59,15 +62,25 @@ module.exports.getAccessToken = async (event) => {
     });
   })
     .then((token) => {
+      // Respond with OAuth token
       return {
         statusCode: 200,
+        mode: 'no-cors',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
         body: JSON.stringify(token),
       };
     })
     .catch((err) => {
+      // Handle error
       console.error(err);
       return {
         statusCode: 500,
+        mode: 'no-cors',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
         body: JSON.stringify(err),
       };
     });

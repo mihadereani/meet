@@ -56,7 +56,12 @@
       "https://qz44vainpj.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url";
 
     getURLElement.onclick = function () {
-      fetch(getAuthURL)
+      fetch(getAuthURL, {
+        mode: "no-cors",
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        }
+      })
         .then(function (response) {
           return response.json();
         })
@@ -76,7 +81,7 @@
     const getAccessToken = document.getElementById("getToken");
     const accessTokenElement = document.getElementById("accessToken");
     const getToken =
-      "https://qz44vainpj.execute-api.eu-central-1.amazonaws.com/dev/api/token/{code}";
+      "https://qz44vainpj.execute-api.eu-central-1.amazonaws.com/dev/api/token";
 
     getAccessToken.onclick = function () {
       let code = codeValue.value;
@@ -86,12 +91,7 @@
         code = encodeURIComponent(codeValue.value);
       }
       const getTokenRequest = getToken + "/" + code;
-      fetch(getTokenRequest, {
-        mode: "no-cors",
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-        }
-      })
+      fetch(getTokenRequest)
         .then(function (response) {
           return response.json();
         })
@@ -104,12 +104,17 @@
     // -- STEP 3
     const getEvents = document.getElementById("getEvents");
     const events = document.getElementById("events");
-    const getCalendarEvents = "https://qz44vainpj.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/{access_token}";
+    const getCalendarEvents = "https://qz44vainpj.execute-api.eu-central-1.amazonaws.com/dev/api/get-events";
 
     getEvents.onclick = function () {
       const { access_token } = JSON.parse(accessTokenElement.innerText);
       const eventRequest = getCalendarEvents + "/" + access_token;
-      fetch(eventRequest)
+      fetch(eventRequest, {
+        mode: "no-cors",
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        }
+      })
         .then(function (response) {
           return response.json();
         })

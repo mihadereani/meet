@@ -120,6 +120,7 @@ module.exports.getCalendarEvents = (event) => {
     .then((results) => {
       return {
         statusCode: 200,
+        mode: 'no-cors',
         headers: {
           'Access-Control-Allow-Origin': '*',
         },
@@ -129,6 +130,7 @@ module.exports.getCalendarEvents = (event) => {
     .catch((error) => {
       return {
         statusCode: 500,
+        mode: 'no-cors',
         headers: {
           'Access-Control-Allow-Origin': '*',
         },

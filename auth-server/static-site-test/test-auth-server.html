@@ -76,8 +76,7 @@
     const codeValue = document.getElementById("code");
     const getAccessToken = document.getElementById("getToken");
     const accessTokenElement = document.getElementById("accessToken");
-    const getToken =
-      "https://qz44vainpj.execute-api.eu-central-1.amazonaws.com/dev/api/token";
+    const getToken = "https://qz44vainpj.execute-api.eu-central-1.amazonaws.com/dev/api/token";
 
     getAccessToken.onclick = function () {
       let code = codeValue.value;
@@ -87,11 +86,9 @@
         code = encodeURIComponent(codeValue.value);
       }
       const getTokenRequest = getToken + "/" + code;
-      fetch(getTokenRequest, {
-        mode: 'no-cors',
-      })
+      fetch(getTokenRequest)
         .then(function (response) {
-          if (response.status === 200) { return response.json(); } else { return Promise.reject(response); }
+          return response.json();
         })
         .then(function (json) {
           accessTokenElement.innerText = JSON.stringify(json);

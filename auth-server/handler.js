@@ -85,7 +85,7 @@ module.exports.getAccessToken = async (event) => {
     });
   })
     .then((token) => {
-      // Respond with OAuth token
+      // respond with OAuth token
       return {
         statusCode: 200,
         headers: {

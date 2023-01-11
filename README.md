@@ -26,7 +26,7 @@ https://mihadereani.github.io/meet/
   3. User can select a city from the suggested list.<br>
      **Given** the user was typing “Berlin” in the city textbox and the list of suggested cities is showing<br>
      **When** the user selects a city (e.g., “Berlin, Germany”) from the list<br>
-     **Then** their city should be changed to that city (i.e., “Berlin, Germany”) and the user should receive a list of upcoming events in that city
+     **Then** their city should be changed to that city (i.e., “Berlin, Germany”), and the list of suggestions should disappear, and the user should receive a list of upcoming events in that city.
 
 ### 2. Show/hide event details
 

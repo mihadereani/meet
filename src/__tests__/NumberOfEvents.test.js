@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { shallow } from 'enzyme';
-// COMPONTENTS //////////
 import NumberOfEvents from '../NumberOfEvents';
 
 describe('<NumberOfEvents />', () => {

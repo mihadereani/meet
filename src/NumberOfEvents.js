@@ -18,7 +18,7 @@ class NumberOfEvents extends Component {
     this.props.updateEvents(null, inputValue);
     this.setState({
       noe: inputValue,
-      errorTest: errText,
+      errorText: errText,
     });
     console.log(this.props);
   };

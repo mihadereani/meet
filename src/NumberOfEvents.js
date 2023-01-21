@@ -20,7 +20,6 @@ class NumberOfEvents extends Component {
       noe: inputValue,
       errorText: errText,
     });
-    console.log(this.props);
   };
 
   render() {

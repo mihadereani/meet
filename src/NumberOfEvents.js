@@ -5,7 +5,7 @@ class NumberOfEvents extends Component {
   state = { noe: 32, errorText: '' };
 
   handleInputChanged = (event) => {
-    const inputValue = event.target.value;
+    let inputValue = event.target.value;
     let errText;
 
     if (inputValue < 0 || inputValue === 0) inputValue = 0;

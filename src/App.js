@@ -5,6 +5,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import EventList from './EventList';
 import { getEvents, extractLocations } from './api';
+import { WarningAlert } from './Alert';
 
 class App extends Component {
   state = {
@@ -72,6 +73,9 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
+        {!navigator.onLine && (
+          <WarningAlert text='You are currently offline. The event list may not be up-to-date.' />
+        )}
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}

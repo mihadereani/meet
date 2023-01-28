@@ -104,19 +104,22 @@ class App extends Component {
         <NumberOfEvents updateEvents={this.updateEvents} />
 
         <ScatterChart
-          width={730}
-          height={250}
-          margin={{ top: 20, right: 20, bottom: 10, left: 10 }}
+          width={400}
+          height={400}
+          margin={{
+            top: 20,
+            right: 20,
+            bottom: 20,
+            left: 20,
+          }}
         >
-          <CartesianGrid strokeDasharray='3 3' />
-          <XAxis dataKey='x' name='stature' unit='cm' />
-          <YAxis dataKey='y' name='weight' unit='kg' />
-          <ZAxis dataKey='z' range={[64, 144]} name='score' unit='km' />
+          <CartesianGrid />
+          <XAxis type='number' dataKey='x' name='stature' unit='cm' />
+          <YAxis type='number' dataKey='y' name='weight' unit='kg' />
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-          <Legend />
-          <Scatter name='A school' data={data01} fill='#8884d8' />
-          <Scatter name='B school' data={data02} fill='#82ca9d' />
+          <Scatter name='A school' data={data} fill='#8884d8' />
         </ScatterChart>
+        <EventList events={this.state.events} />
 
         <EventList events={this.state.events} />
         <WelcomeScreen

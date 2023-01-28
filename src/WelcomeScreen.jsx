@@ -1,5 +1,6 @@
 import React from 'react';
 import './WelcomeScreen.css';
+
 function WelcomeScreen(props) {
   return props.showWelcomeScreen ? (
     <div className='WelcomeScreen'>
@@ -12,7 +13,8 @@ function WelcomeScreen(props) {
           <div class='google-icon-wrapper'>
             <img
               class='google-icon'
-              src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg'
+              src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Log
+o.svg'
               alt='Google sign-in'
             />
           </div>

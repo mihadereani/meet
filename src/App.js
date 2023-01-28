@@ -119,7 +119,6 @@ class App extends Component {
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
           <Scatter name='A school' data={data} fill='#8884d8' />
         </ScatterChart>
-        <EventList events={this.state.events} />
 
         <EventList events={this.state.events} />
         <WelcomeScreen

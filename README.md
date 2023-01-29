@@ -6,6 +6,16 @@ Meet App is a progressive web application (PWA) that uses the Google Calendar AP
 
 https://mihadereani.github.io/meet/
 
+## Technologies used
+
+The main technologies, languages, and libraries used in the development of this app include:
+
+- Javascript
+- React
+- Recharts
+- AWS
+- Google Calendar API
+
 ## Key Features
 
 ### 1. Filter events by city.

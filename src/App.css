@@ -136,8 +136,8 @@ input[type='number'] {
 
 .data-vis-wrapper {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 .data-vis-wrapper .recharts-responsive-container {
   min-width: 100%;
@@ -145,6 +145,13 @@ input[type='number'] {
 }
 .recharts-surface {
   overflow: visible;
+}
+
+.scatter-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20;
 }
 
 .login-button {
@@ -208,6 +215,6 @@ input[type='number'] {
     flex-basis: 50%;
     max-width: 50%;
     min-width: auto;
-    margin: 0 auto;
+    margin: auto;
   }
 }

@@ -147,13 +147,6 @@ input[type='number'] {
   overflow: visible;
 }
 
-.scatter-chart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20;
-}
-
 .login-button {
   color: #494949;
   text-transform: uppercase;

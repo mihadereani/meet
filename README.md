@@ -96,3 +96,7 @@ The main technologies, languages, and libraries used in the development of this 
      **Given** the user hasn't searched a specific city<br>
      **When** the user opens the app<br>
      **Then** a chart with an overview, indicating the number of upcoming events by city will be shown.
+
+## App Screenshot
+
+![](./public/Screenshot%202023-03-23%20at%2016.18.18.png)
